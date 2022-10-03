@@ -23,13 +23,13 @@ report := [
 
 rule_set := input.rule_set { utils.exists(input, "rule_set") } else := data.rule_set
 
-gh_overview_modules["org"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "files",]
+gh_overview_modules["org"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "files", "reviews",]
 
-gh_overview_modules["user"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "ssh_keys", "files",]
+gh_overview_modules["user"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "ssh_keys", "files", "reviews",]
 
-gh_detailed_modules["org"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys"]
+gh_detailed_modules["org"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "reviews",]
 
-gh_detailed_modules["user"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "ssh_keys"]
+gh_detailed_modules["user"] := ["repos", "tfa", "admins", "teams", "collaborators", "branches", "commits", "deploy_keys", "ssh_keys", "reviews",]
 
 gh_intro["org"] := v {
   orgs := utils.json_to_md_list(input.organizations, "  ")
